@@ -6,8 +6,6 @@
     "python3",
     "telegram",
     "bot",
-    "Yukki",
-    "YukkiMusicBot",
     "telegram-bot",
     "pyrogram"
     ],
@@ -73,11 +71,6 @@
         "value": "https://github.com/TeamYukki/YukkiMusicBot",
         "required": true
       },
-      "UPSTREAM_BRANCH": {
-        "description": "Upstream Repo's Branch Name",
-        "value": "master",
-        "required": true
-      }
     },
     "buildpacks": [
           {
