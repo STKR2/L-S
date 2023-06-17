@@ -1,18 +1,17 @@
 #
-# Copyright (C) 2021-present by TeamYukki@Github, < https://github.com/TeamYukki >.
+# Copyright (C) 2021-2022 by TeamYukki@Github, < https://github.com/TeamYukki >.
 #
 # This file is part of < https://github.com/TeamYukki/YukkiMusicBot > project,
 # and is released under the "GNU v3.0 License Agreement".
 # Please see < https://github.com/TeamYukki/YukkiMusicBot/blob/master/LICENSE >
 #
 # All rights reserved.
-#
 
 from typing import Union
 
 from pyrogram.types import InlineKeyboardButton
 
-from config import SUPPORT_CHANNEL, SUPPORT_GROUP
+from config import GITHUB_REPO, SUPPORT_CHANNEL, SUPPORT_GROUP
 from YukkiMusic import app
 
 
@@ -103,15 +102,24 @@ def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
             )
         ]
     )
-    if OWNER:
+    if GITHUB_REPO and OWNER:
         buttons.append(
             [
                 InlineKeyboardButton(text=_["S_B_7"], user_id=OWNER),
-                InlineKeyboardButton(text=_["S_B_6"], callback_data="ok_viro""
+                InlineKeyboardButton(
+                    text=_["S_B_6"], url=f"https://github.com/Rahulsharma45/YukkiMusicBot"
                 ),
             ]
         )
     else:
+        if GITHUB_REPO:
+            buttons.append(
+                [
+                    InlineKeyboardButton(
+                        text=_["S_B_6"], url=f"https://github.com/Rahulsharma45/YukkiMusicBot"
+                    ),
+                ]
+            )
         if OWNER:
             buttons.append(
                 [
