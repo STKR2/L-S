@@ -66,7 +66,7 @@ async def gib_repo(client, CallbackQuery, _):
     await CallbackQuery.edit_message_media(
         InputMediaVideo("https://graph.org/file/75a3cda8061b6ebf9febc.mp4", has_spoiler=True),
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton(text="✨ ʙᴀᴄᴋ ✨", callback_data=f"settingsback_helper")]]
+            [[InlineKeyboardButton(text="Back", callback_data=f"settingsback_helper")]]
         ),
     )
 
