@@ -10,11 +10,11 @@ lyricsgenius
 motor
 pillow
 psutil
-py-tgcalls
+py-tgcalls==0.8.6
 pykeyboard
 pyrogram==2.0.106
 python-dotenv
-pyyaml
+PyYAML==5.3.1
 requests
 speedtest-cli
 spotipy
