@@ -1,5 +1,5 @@
 {
-    "name": "Yukki Music Bot",
+    "name": "KSK Music Bot",
     "description": "Telegram Group Calls streaming bot with some useful features, written in Python with Pyrogram and Py-Tgcalls. Supporting platforms like Youtube, Spotify, Resso, AppleMusic, Soundcloud and M3u8 Links.",
     "logo": "https://telegra.ph/file/c0e014ff34f34d1056627.png",
     "keywords": [
@@ -9,7 +9,6 @@
     "telegram-bot",
     "pyrogram"
     ],
-    "stack": "container",
     "env": {
       "API_ID": {
         "description": "Get this value from https://my.telegram.org",
@@ -83,10 +82,5 @@
               "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
           }
       ],
-      "formation": {
-          "worker": {
-              "quantity": 1,
-              "size": "eco"
-          }
-      }
+      "stack": "container"
   }
