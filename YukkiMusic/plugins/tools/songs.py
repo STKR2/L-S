@@ -33,7 +33,7 @@ async def song(client: app, message: Message):
                 }
             ],
             "outtmpl": f"downloads/{song_title}.mp3",
-            "audio_quality": 80,  # تحديد جودة الصوت
+            "audio_quality": 100,  # تحديد جودة الصوت
         }
         
         await aux.edit("‹ يتم الرفع  ›")
