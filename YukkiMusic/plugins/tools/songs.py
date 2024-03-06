@@ -21,20 +21,19 @@ async def song(client: app, message: Message):
         song_title = vid.result()["result"][0]["title"]
         song_link = vid.result()["result"][0]["link"]
         
-        ydl_opts = {
-    "format": "mp3/bestaudio/best",
+ ydl_opts = {
+    "format": "bestaudio/best",
     "verbose": True,
     "geo-bypass": True,
     "nocheckcertificate": True,
     "postprocessors": [
         {
             "key": "FFmpegExtractAudio",
-            "preferredcodec": "mp3"
+            "preferredcodec": "mp3",
+            "preferredquality": "50",  # يمكنك ضبط جودة الصوت هنا
         }
     ],
-    "outtmpl": f"downloads/{song_title}.%(ext)s",
-    "format": "worstaudio/worst",  # تحديد أدنى جودة ممكنة
-    "audio_quality": "5",  # يمكنك ضبط هذه القيمة بين 0 (أدنى) و9 (أعلى)
+    "outtmpl": f"downloads/{song_title}.mp3",
 }
         
         await aux.edit("‹ يتم الرفع  ›")
