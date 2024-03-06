@@ -11,7 +11,7 @@
 import asyncio
 import platform
 from sys import version as pyver
-
+from strings.filters import command
 import psutil
 from pyrogram import __version__ as pyrover
 from pyrogram import filters
@@ -47,8 +47,7 @@ STATS_COMMAND = get_command("STATS_COMMAND")
 
 
 @app.on_message(
-    filters.command(STATS_COMMAND)
-    & filters.group
+    command(STATS_COMMAND)
     & ~BANNED_USERS
 )
 @language
