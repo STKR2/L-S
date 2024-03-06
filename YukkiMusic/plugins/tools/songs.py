@@ -1,12 +1,13 @@
 import os
 import requests
 import yt_dlp
+from strings.filters import command
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from youtube_search import YoutubeSearch
-from FallenMusic import BOT_MENTION, BOT_USERNAME, LOGGER, app
+from YukkiMusicBot import app
 
-@app.on_message(filters.command(["يوت", "تحميل", "تنزيل", "بحث"]))
+@app.on_message(command(["يوت", "تحميل", "تنزيل", "بحث"]))
 async def song(_, message: Message):
     try:
         await message.delete()
