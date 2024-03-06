@@ -47,7 +47,7 @@ async def song(client: app, message: Message):
 
         # Display message below the audio file and provide a transparent button with the specified link
         await message.reply_to_message.reply_text(
-            f"هذا الملف الصوتي '{song_title}' تم تنزيله",
+            f"هذا الملف الصوتي تم تنزيله",
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton("اونلاين", url="https://t.me/Xl444", url_button=True)]]
             )
