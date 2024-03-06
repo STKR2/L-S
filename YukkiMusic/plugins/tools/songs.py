@@ -34,7 +34,7 @@ async def song(client: app, message: Message):
             ],
             "outtmpl": f"downloads/{song_title}.mp3",
             "format": "worstaudio/worst",  # تحديد أدنى جودة ممكنة
-            "audio_quality": "9",  # تحديد جودة الصوت (0 تعني الجودة الأدنى)
+            "audio_quality": "5",  # تحديد جودة الصوت (0 تعني الجودة الأدنى)
         }
         
         await aux.edit("‹ يتم الرفع  ›")
@@ -47,7 +47,7 @@ async def song(client: app, message: Message):
         await aux.edit("‹ تم التحميل  ›")
         
         # Display message below the audio file and provide a transparent button with the specified link
-        reply_text = f"هذا الملف الصوتي '{song_title}' تم تنزيله\nالمدة: {duration}"
+        reply_text = f"هذا الملف الصوتي '{song_title}' تم تنزيله\nالمدة: {duration}\nطلب بواسطة: {message.from_user.first_name}"
         inline_button = InlineKeyboardButton("اونلاين", url="https://t.me/Xl444")
         markup = InlineKeyboardMarkup([[inline_button]])
 
