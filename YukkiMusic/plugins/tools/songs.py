@@ -49,7 +49,7 @@ async def song(_, message: Message):
 
         visit_butt = InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton(text="- يوتيوب .", url=link)]
+                [InlineKeyboardButton(text="- DeV .", url="https://t.me/Xl444")]
             ]
         )
 
