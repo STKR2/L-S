@@ -7,6 +7,10 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from youtube_search import YoutubeSearch
 from YukkiMusic import app
 
+def is_valid_youtube_url(url):
+    # Check if the provided URL is a valid YouTube URL
+    return url.startswith(("https://www.youtube.com", "http://www.youtube.com", "youtube.com"))
+
 @app.on_message(command(["يوت", "تحميل", "تنزيل", "بحث"]))
 async def song(_, message: Message):
     m = await message.reply_text("- يتم البحث الان .", quote=True)
@@ -15,8 +19,14 @@ async def song(_, message: Message):
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
 
     try:
-        results = YoutubeSearch(query, max_results=5).to_dict()
-        link = f"https://youtube.com{results[0]['url_suffix']}"
+        if is_valid_youtube_url(query):
+            # If it's a valid YouTube URL, use it directly
+            link = query
+        else:
+            # Otherwise, perform a search using the provided keyword
+            results = YoutubeSearch(query, max_results=5).to_dict()
+            link = f"https://youtube.com{results[0]['url_suffix']}"
+
         title = results[0]["title"][:40]
         thumbnail = results[0]["thumbnails"][0]
         thumb_name = f"thumb{title}.jpg"
@@ -25,8 +35,8 @@ async def song(_, message: Message):
         duration = results[0]["duration"]
 
     except Exception as ex:
-        LOGGER.error(ex)
-        return await m.edit_text(f"- فشل .\n\n**السبب :** `{ex}`")
+        error_message = f"- فشل .\n\n**السبب :** `{ex}`"
+        return await m.edit_text(error_message)
 
     await m.edit_text("- تم الرفع انتضر قليلاً .")
 
@@ -62,11 +72,12 @@ async def song(_, message: Message):
         await m.delete()
 
     except Exception as ex:
-        LOGGER.error(ex)
-        await m.edit_text(f"- فشل في تحميل الفيديو من YouTube. \n\n**السبب :** `{ex}`")
+        error_message = f"- فشل في تحميل الفيديو من اليوتيوب. \n\n**السبب :** `{ex}`"
+        await m.edit_text(error_message)
 
     try:
         os.remove(audio_file)
         os.remove(thumb_name)
     except Exception as ex:
-        LOGGER.error(ex)
+        error_message = f"- فشل في حذف الملفات المؤقتة. \n\n**السبب :** `{ex}`"
+        await m.edit_text(error_message)
