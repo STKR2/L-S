@@ -1,4 +1,3 @@
-
 import os
 import yt_dlp
 from pyrogram import filters
@@ -46,7 +45,7 @@ async def song(client: app, message: Message):
 
         # Display message below the audio file and provide a transparent button with the specified link
         reply_text = f"هذا الملف الصوتي '{song_title}' تم تنزيله"
-        inline_button = InlineKeyboardButton("اونلاين", url="https://t.me/Xl444", url_button=True)
+        inline_button = InlineKeyboardButton("اونلاين", url="https://t.me/Xl444")
         markup = InlineKeyboardMarkup([[inline_button]])
 
         await message.reply_text(reply_text, reply_markup=markup)
