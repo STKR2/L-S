@@ -10,7 +10,7 @@
 
 from pyrogram import filters
 from pyrogram.types import Message
-
+from strings.filters import command
 from config import BANNED_USERS
 from strings import get_command
 from YukkiMusic import app
@@ -23,7 +23,7 @@ STOP_COMMAND = get_command("STOP_COMMAND")
 
 
 @app.on_message(
-    filters.command(STOP_COMMAND)
+    command(STOP_COMMAND)
     & ~BANNED_USERS
 )
 @AdminRightsCheck
