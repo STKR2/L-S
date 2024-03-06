@@ -29,11 +29,11 @@ async def song(client: app, message: Message):
             "postprocessors": [
                 {
                     "key": "FFmpegExtractAudio",
-                    "preferredcodec": "mp3"
+                    "preferredcodec": "mp3",
+                    "preferredquality": "160",  # رفع جودة الصوت
                 }
             ],
             "outtmpl": f"downloads/{song_title}.mp3",
-            "audio_quality": 192,  # تحديد جودة الصوت
         }
         
         await aux.edit("‹ يتم الرفع  ›")
