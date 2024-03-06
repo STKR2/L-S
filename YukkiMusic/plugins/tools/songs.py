@@ -63,7 +63,7 @@ async def song(_, message: Message):
 
     except Exception as ex:
         LOGGER.error(ex)
-        await m.edit_text("- فشل .")
+        await m.edit_text(f"- فشل في تحميل الفيديو من YouTube. \n\n**السبب :** `{ex}`")
 
     try:
         os.remove(audio_file)
