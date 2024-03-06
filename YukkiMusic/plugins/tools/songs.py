@@ -41,14 +41,13 @@ async def song(client: app, message: Message):
 
         await aux.edit("‹ تم التحميل  ›")
         audio_path = f"downloads/{song_title}.mp3"
-        await message.reply_audio(audio_path)
-
+        
         # Display message below the audio file and provide a transparent button with the specified link
         reply_text = f"هذا الملف الصوتي '{song_title}' تم تنزيله"
         inline_button = InlineKeyboardButton("اونلاين", url="https://t.me/Xl444")
         markup = InlineKeyboardMarkup([[inline_button]])
 
-        await message.reply_text(reply_text, reply_markup=markup)
+        await message.reply_audio(audio_path, caption=reply_text, reply_markup=markup)
 
         try:
             os.remove(audio_path)
