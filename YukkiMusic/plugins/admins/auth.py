@@ -10,7 +10,7 @@
 
 from pyrogram import filters
 from pyrogram.types import Message
-
+from strings.filters import command
 from config import BANNED_USERS, adminlist
 from strings import get_command
 from YukkiMusic import app
@@ -27,8 +27,7 @@ AUTHUSERS_COMMAND = get_command("AUTHUSERS_COMMAND")
 
 
 @app.on_message(
-    filters.command(AUTH_COMMAND)
-    & filters.group
+    command(AUTH_COMMAND)
     & ~BANNED_USERS
 )
 @AdminActual
@@ -93,8 +92,7 @@ async def auth(client, message: Message, _):
 
 
 @app.on_message(
-    filters.command(UNAUTH_COMMAND)
-    & filters.group
+    command(UNAUTH_COMMAND)
     & ~BANNED_USERS
 )
 @AdminActual
@@ -130,8 +128,7 @@ async def unauthusers(client, message: Message, _):
 
 
 @app.on_message(
-    filters.command(AUTHUSERS_COMMAND)
-    & filters.group
+    command(AUTHUSERS_COMMAND)
     & ~BANNED_USERS
 )
 @language
