@@ -1,7 +1,6 @@
 import os
 import requests
 import yt_dlp
-from strings.filters import command
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from youtube_search import YoutubeSearch
@@ -9,11 +8,7 @@ from YukkiMusic import app
 
 @app.on_message(command(["يوت", "تحميل", "تنزيل", "بحث"]))
 async def song(_, message: Message):
-    try:
-        await message.delete()
-    except:
-        pass
-    m = await message.reply_text("- يتم البحث الان .")
+    m = await message.reply_text("- يتم البحث الان .", quote=True)
 
     query = " ".join(str(i) for i in message.command[1:])
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
@@ -49,7 +44,7 @@ async def song(_, message: Message):
 
         visit_butt = InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton(text="- DeV .", url="https://t.me/Xl444")]
+                [InlineKeyboardButton(text="- المطور .", url="https://t.me/Xl444")]
             ]
         )
 
@@ -65,8 +60,9 @@ async def song(_, message: Message):
 
         await m.delete()
 
-    except:
-        return await m.edit_text("- فشل الرفع .")
+    except Exception as ex:
+        LOGGER.error(ex)
+        await m.edit_text("- فشل .")
 
     try:
         os.remove(audio_file)
