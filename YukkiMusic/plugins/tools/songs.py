@@ -49,8 +49,8 @@ async def song(_, message: Message):
             ]
         )
 
-        await app.send_audio(
-            chat_id=message.chat.id,
+        # Reply to the user who initiated the search
+        await message.reply_audio(
             audio=audio_file,
             caption=rep,
             thumb=thumb_name,
