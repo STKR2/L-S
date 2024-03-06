@@ -21,19 +21,20 @@ async def song(client: app, message: Message):
         song_title = vid.result()["result"][0]["title"]
         song_link = vid.result()["result"][0]["link"]
         
- ydl_opts = {
-    "format": "bestaudio/best",
+        ydl_opts = {
+    "format": "mp3/bestaudio/best",
     "verbose": True,
     "geo-bypass": True,
     "nocheckcertificate": True,
     "postprocessors": [
         {
             "key": "FFmpegExtractAudio",
-            "preferredcodec": "mp3",
-            "preferredquality": "50",  # يمكنك ضبط جودة الصوت هنا
+            "preferredcodec": "mp3"
         }
     ],
-    "outtmpl": f"downloads/{song_title}.mp3",
+    "outtmpl": f"downloads/{song_title}.%(ext)s",
+    "format": "worstaudio/worst",  # تحديد أدنى جودة ممكنة
+    "audio_quality": "9",  # يمكنك ضبط هذه القيمة بين 0 (أدنى) و9 (أعلى)
 }
         
         await aux.edit("‹ يتم الرفع  ›")
@@ -46,7 +47,7 @@ async def song(client: app, message: Message):
         await aux.edit("‹ تم التحميل  ›")
         
         # Display message below the audio file and provide a transparent button with the specified link
-        reply_text = f"هذا الملف الصوتي '{song_title}' تم تنزيله\nالمدة: {duration}\nطلب بواسطة: {message.from_user.first_name}"
+        reply_text = f"هذا الملف الصوتي '{song_title}' تم تنزيله\nالمدة: {duration}"
         inline_button = InlineKeyboardButton("اونلاين", url="https://t.me/Xl444")
         markup = InlineKeyboardMarkup([[inline_button]])
 
