@@ -11,7 +11,7 @@
 import random
 import string
 from ast import ExceptHandler
-
+from strings.filters import command
 from pyrogram import filters
 from pyrogram.types import (InlineKeyboardMarkup, InputMediaPhoto,
                             Message)
@@ -41,7 +41,7 @@ PLAY_COMMAND = get_command("PLAY_COMMAND")
 
 
 @app.on_message(
-    filters.command(PLAY_COMMAND)
+    command(PLAY_COMMAND)
     & ~BANNED_USERS
 )
 @PlayWrapper
