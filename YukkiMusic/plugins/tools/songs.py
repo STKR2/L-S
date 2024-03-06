@@ -5,7 +5,7 @@ from strings.filters import command
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from youtube_search import YoutubeSearch
-from YukkiMusicBot import app
+from YukkiMusic import app
 
 @app.on_message(command(["يوت", "تحميل", "تنزيل", "بحث"]))
 async def song(_, message: Message):
