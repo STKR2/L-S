@@ -1,5 +1,6 @@
 import os
 import yt_dlp
+import datetime
 from pyrogram import filters
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 
@@ -32,18 +33,20 @@ async def song(client: app, message: Message):
                 }
             ],
             "outtmpl": f"downloads/{song_title}.%(ext)s",
+            "format": "worstaudio/worst",  # تحديد أدنى جودة ممكنة
         }
         
         await aux.edit("‹ يتم الرفع  ›")
         
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-            ydl.download([song_link])
+            info_dict = ydl.extract_info(song_link, download=True)
+            audio_path = ydl.prepare_filename(info_dict)
+            duration = str(datetime.timedelta(seconds=info_dict['duration']))
 
         await aux.edit("‹ تم التحميل  ›")
-        audio_path = f"downloads/{song_title}.mp3"
         
         # Display message below the audio file and provide a transparent button with the specified link
-        reply_text = f"هذا الملف الصوتي '{song_title}' تم تنزيله"
+        reply_text = f"هذا الملف الصوتي '{song_title}' تم تنزيله\nالمدة: {duration}\nطلب بواسطة: {message.from_user.first_name}"
         inline_button = InlineKeyboardButton("اونلاين", url="https://t.me/Xl444")
         markup = InlineKeyboardMarkup([[inline_button]])
 
