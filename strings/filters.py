@@ -4,9 +4,8 @@ from pyrogram import filters
 
 other_filters = filters.group & ~filters.via_bot & ~filters.forwarded
 other_filters2 = (
-    filters.private & ~filters.via_bot & ~filters.forwarded
+    filters.private
 )
-
 
 def command(commands: Union[str, List[str]]):
     return filters.command(commands, "")
