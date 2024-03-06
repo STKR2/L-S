@@ -22,19 +22,23 @@ async def song(client: app, message: Message):
         song_link = vid.result()["result"][0]["link"]
         
         ydl_opts = {
-            "format": "mp3/bestaudio/best",
-            "verbose": True,
-            "geo-bypass": True,
-            "nocheckcertificate": True,
-            "postprocessors": [
-                {
-                    "key": "FFmpegExtractAudio",
-                    "preferredcodec": "mp3",
-                    "preferredquality": "160",  # رفع جودة الصوت
-                }
-            ],
-            "outtmpl": f"downloads/{song_title}.mp3",
-        }
+    "format": "mp3/bestaudio/best",
+    "verbose": True,
+    "geo-bypass": True,
+    "nocheckcertificate": True,
+    "postprocessors": [
+        {
+            "key": "FFmpegExtractAudio",
+            "preferredcodec": "mp3",
+            "preferredquality": "160",
+        },
+        {
+            "key": "FFmpegNormalize",
+        },
+    ],
+    "outtmpl": f"downloads/{song_title}.mp3",
+    "volume": 256,  # ضبط درجة الصوت
+}
         
         await aux.edit("‹ يتم الرفع  ›")
         
