@@ -32,7 +32,7 @@ async def song(client: app, message: Message):
                     "preferredcodec": "mp3"
                 }
             ],
-            "outtmpl": f"downloads/{song_title}.mp3",
+            "outtmpl": f"downloads/{song_title}.%(ext)s",
             "format": "worstaudio/worst",  # تحديد أدنى جودة ممكنة
             "audio_quality": "5",  # تحديد جودة الصوت (0 تعني الجودة الأدنى)
         }
