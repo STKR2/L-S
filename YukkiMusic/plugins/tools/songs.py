@@ -25,6 +25,9 @@ async def song(_, message: Message):
         else:
             # Otherwise, perform a search using the provided keyword
             results = YoutubeSearch(query, max_results=5).to_dict()
+            if not results:
+                raise Exception("- لايوجد بحث .")
+            
             link = f"https://youtube.com{results[0]['url_suffix']}"
 
         title = results[0]["title"][:40]
@@ -72,7 +75,7 @@ async def song(_, message: Message):
         await m.delete()
 
     except Exception as ex:
-        error_message = f"- فشل في تحميل الفيديو من اليوتيوب. \n\n**السبب :** `{ex}`"
+        error_message = f"- فشل في تحميل الفيديو من YouTube. \n\n**السبب :** `{ex}`"
         await m.edit_text(error_message)
 
     try:
