@@ -1,3 +1,4 @@
+
 import os
 import yt_dlp
 from pyrogram import filters
@@ -21,7 +22,7 @@ async def song(client: app, message: Message):
         song_link = vid.result()["result"][0]["link"]
         
         ydl_opts = {
-            "format": "bestaudio/best",
+            "format": "mp3/bestaudio/best",
             "verbose": True,
             "geo-bypass": True,
             "nocheckcertificate": True,
@@ -32,26 +33,23 @@ async def song(client: app, message: Message):
                 }
             ],
             "outtmpl": f"downloads/{song_title}.%(ext)s",
-            "noplaylist": True,  # تجنب تنزيل قوائم التشغيل
         }
         
         await aux.edit("‹ يتم الرفع  ›")
         
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-            info_dict = ydl.extract_info(song_link, download=True)
-            audio_path = ydl.prepare_filename(info_dict)
-        
+            ydl.download([song_link])
+
         await aux.edit("‹ تم التحميل  ›")
-        
+        audio_path = f"downloads/{song_title}.mp3"
         await message.reply_audio(audio_path)
 
         # Display message below the audio file and provide a transparent button with the specified link
-        await message.reply_to_message.reply_text(
-            f"هذا الملف الصوتي تم تنزيله",
-            reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("اونلاين", url="https://t.me/Xl444", url_button=True)]]
-            )
-        )
+        reply_text = f"هذا الملف الصوتي '{song_title}' تم تنزيله"
+        inline_button = InlineKeyboardButton("اونلاين", url="https://t.me/Xl444", url_button=True)
+        markup = InlineKeyboardMarkup([[inline_button]])
+
+        await message.reply_text(reply_text, reply_markup=markup)
 
         try:
             os.remove(audio_path)
