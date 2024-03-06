@@ -32,7 +32,7 @@ async def song(client: app, message: Message):
                     "preferredcodec": "mp3"
                 }
             ],
-            "outtmpl": f"downloads/{song_title}.%(ext)s",
+            "outtmpl": f"downloads/{song_title}.mp3",
             "format": "worstaudio/worst",  # تحديد أدنى جودة ممكنة
             "audio_quality": "5",  # تحديد جودة الصوت (0 تعني الجودة الأدنى)
         }
@@ -51,6 +51,7 @@ async def song(client: app, message: Message):
         inline_button = InlineKeyboardButton("اونلاين", url="https://t.me/Xl444")
         markup = InlineKeyboardMarkup([[inline_button]])
 
+        # Use send_audio method to send the audio file directly
         await message.reply_audio(audio_path, caption=reply_text, reply_markup=markup)
 
         try:
