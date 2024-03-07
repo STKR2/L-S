@@ -24,3 +24,24 @@ async def mmmezat(client, message):
             ]
         ),
     )
+
+@app.on_message(
+    command(["المطور","السورس","المصنع"])
+)
+async def maker(client: Client, message: Message):
+    await message.reply_photo(
+        photo=f"https://te.legra.ph/file/402c519808f75bd9b1803.jpg",
+        caption=f"""~ قناة سورس البوت \n~ قناة مطور البوت """,
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "- مطور البوت .", user_id=config.OWNER_ID[0]),
+                ],
+                [
+                   InlineKeyboardButton(
+                        "- قناة البوت . ", url=config.SUPPORT_CHANNEL[0]),
+                ],       
+            ]
+        ),
+    )
