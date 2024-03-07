@@ -30,9 +30,8 @@ async def strcall(client, message):
 
         # إضافة زر شفاف في الأسفل
         inline_keyboard = InlineKeyboardMarkup([
-            [InlineKeyboardButton("~ المنشئ .", user_id=config.OWNER_ID[0])]
-            ]
-        )
+            [InlineKeyboardButton("- قناة البوت . ", url=config.SUPPORT_CHANNEL),
+                ],       
 
         await message.reply(f"{text}", reply_markup=inline_keyboard)
         await asyncio.sleep(7)
@@ -58,8 +57,7 @@ async def strcall(client, message):
 
         # إضافة زر شفاف في الأسفل
         inline_keyboard = InlineKeyboardMarkup([
-            [InlineKeyboardButton("~ المنشئ .", user_id=config.OWNER_ID[0])]
-            ]
-        )
+            [InlineKeyboardButton("- قناة البوت . ", url=config.SUPPORT_CHANNEL),
+                ],       
 
         await message.reply(f"{text}", reply_markup=inline_keyboard)
