@@ -128,4 +128,7 @@ async def video_search(client, message):
     )
     try:
         os.remove(file_name)
-        await msg.delete()
+    except Exception as ex:
+        print(f"Error removing file: {ex}")
+    
+    await msg.delete()
