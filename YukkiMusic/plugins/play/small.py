@@ -103,8 +103,7 @@ async def user_set(_, query: CallbackQuery):
     
    
 
-@app.on_message(
-    command(["الاوامر", f"اوامر"])
+@app.on_message(command(["الاوامر", f"اوامر"])
 async def alive(c: Client, message: Message):
     chat_id = message.chat.id
     current_time = datetime.utcnow()
