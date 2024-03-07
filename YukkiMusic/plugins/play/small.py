@@ -1,6 +1,5 @@
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
-from datetime import datetime
 from strings.filters import command
 from YukkiMusic import app
 
@@ -8,7 +7,6 @@ from YukkiMusic import app
 @app.on_message(command(["الاوامر", "اوامر"]))
 async def alive(message: Message):
     chat_id = message.chat.id
-    current_time = datetime.utcnow()
     buttons = InlineKeyboardMarkup(
         [
             [
