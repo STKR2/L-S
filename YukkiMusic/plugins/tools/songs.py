@@ -86,7 +86,7 @@ async def song(_, message: Message):
         await m.edit_text(error_message)
 
 
-@@app.on_message(command(["ابحثلي", "video"]))
+@app.on_message(command(["ابحثلي", "video"]))
 async def video_search(client, message):
     ydl_opts = {
         "format": "best",
