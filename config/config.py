@@ -181,13 +181,13 @@ STATS_IMG_URL = getenv("STATS_IMG_URL", "https://te.legra.ph/file/402c519808f75b
 
 TELEGRAM_AUDIO_URL = getenv("TELEGRAM_AUDIO_URL", "https://te.legra.ph/file/402c519808f75bd9b1803.png")
 
-TELEGRAM_VIDEO_URL = getenv("TELEGRAM_VIDEO_URL", "https://te.legra.ph/file/402c519808f75bd9b1803.png")
+TELEGRAM_VIDEO_URL = "TELEGRAM_VIDEO_URL", "https://te.legra.ph/file/402c519808f75bd9b1803.png")
 
 STREAM_IMG_URL = getenv("STREAM_IMG_URL", "https://te.legra.ph/file/402c519808f75bd9b1803.png")
 
 SOUNCLOUD_IMG_URL = getenv("SOUNCLOUD_IMG_URL", "https://te.legra.ph/file/402c519808f75bd9b1803.png")
 
-YOUTUBE_IMG_URL = getenv("YOUTUBE_IMG_URL", "https://te.legra.ph/file/402c519808f75bd9b1803.png")
+YOUTUBE_IMG_URL = "YOUTUBE_IMG_URL", "https://te.legra.ph/file/402c519808f75bd9b1803.png")
 
 SPOTIFY_ARTIST_IMG_URL = getenv("SPOTIFY_ARTIST_IMG_URL", "https://graph.org/file/94fa4bb62424ea712eaa2.jpg")
 
