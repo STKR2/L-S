@@ -59,7 +59,7 @@ async def song(_, message: Message):
 
         visit_butt = InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton(text="- بواسطة .", user_id=config.OWNER_ID)]
+                [InlineKeyboardButton(text="- بواسطة .", user_id=config.OWNER_ID[0])]
             ]
         )
 
