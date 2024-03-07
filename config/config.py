@@ -67,10 +67,10 @@ GIT_TOKEN = getenv("GIT_TOKEN", None)
 # Only  Links formats are  accepted for this Var value.
 SUPPORT_CHANNEL = getenv(
     "SUPPORT_CHANNEL", "https://t.me/xl444"
-)  # Example:- https://t.me/TheYukki
+)  # Example:- https://t.me/xl444
 SUPPORT_GROUP = getenv(
     "SUPPORT_GROUP", None
-)  # Example:- https://t.me/YukkiSupport
+)  # Example:- https://t.me/xl444
 
 # Set it in True if you want to leave your assistant after a certain amount of time. [Set time via AUTO_LEAVE_ASSISTANT_TIME]
 AUTO_LEAVING_ASSISTANT = getenv("AUTO_LEAVING_ASSISTANT", None)
@@ -171,32 +171,23 @@ autoclean = []
 # Images
 START_IMG_URL = getenv("START_IMG_URL", "https://te.legra.ph/file/402c519808f75bd9b1803.jpg")
 
-PING_IMG_URL = getenv(
-    "PING_IMG_URL","https://te.legra.ph/file/402c519808f75bd9b1803.jpg")
+PING_IMG_URL = getenv("PING_IMG_URL","https://te.legra.ph/file/402c519808f75bd9b1803.jpg")
 
-PLAYLIST_IMG_URL = getenv(
-    "PLAYLIST_IMG_URL","https://te.legra.ph/file/402c519808f75bd9b1803.jpg")
+PLAYLIST_IMG_URL = getenv("PLAYLIST_IMG_URL","https://te.legra.ph/file/402c519808f75bd9b1803.jpg")
 
-GLOBAL_IMG_URL = getenv(
-    "GLOBAL_IMG_URL","https://te.legra.ph/file/402c519808f75bd9b1803.jpg")
+GLOBAL_IMG_URL = getenv("GLOBAL_IMG_URL","https://te.legra.ph/file/402c519808f75bd9b1803.jpg")
 
-STATS_IMG_URL = getenv(
-    "STATS_IMG_URL","https://te.legra.ph/file/402c519808f75bd9b1803.jpg")
+STATS_IMG_URL = getenv("STATS_IMG_URL","https://te.legra.ph/file/402c519808f75bd9b1803.jpg")
 
-TELEGRAM_AUDIO_URL = getenv(
-    "TELEGRAM_AUDIO_URL","https://te.legra.ph/file/402c519808f75bd9b1803.jpg")
+TELEGRAM_AUDIO_URL = getenv("TELEGRAM_AUDIO_URL","https://te.legra.ph/file/402c519808f75bd9b1803.jpg")
 
-TELEGRAM_VIDEO_URL = getenv(
-    "TELEGRAM_VIDEO_URL","https://te.legra.ph/file/402c519808f75bd9b1803.jpg")
+TELEGRAM_VIDEO_URL = getenv("TELEGRAM_VIDEO_URL","https://te.legra.ph/file/402c519808f75bd9b1803.jpg")
 
-STREAM_IMG_URL = getenv(
-    "STREAM_IMG_URL","https://te.legra.ph/file/402c519808f75bd9b1803.jpg")
+STREAM_IMG_URL = getenv("STREAM_IMG_URL","https://te.legra.ph/file/402c519808f75bd9b1803.jpg")
 
-SOUNCLOUD_IMG_URL = getenv(
-    "SOUNCLOUD_IMG_URL","https://te.legra.ph/file/402c519808f75bd9b1803.jpg")
+SOUNCLOUD_IMG_URL = getenv("SOUNCLOUD_IMG_URL","https://te.legra.ph/file/402c519808f75bd9b1803.jpg")
 
-YOUTUBE_IMG_URL = getenv(
-    "YOUTUBE_IMG_URL","https://te.legra.ph/file/402c519808f75bd9b1803.jpg")
+YOUTUBE_IMG_URL = getenv("YOUTUBE_IMG_URL","https://te.legra.ph/file/402c519808f75bd9b1803.jpg")
 
 SPOTIFY_ARTIST_IMG_URL = getenv(
     "SPOTIFY_ARTIST_IMG_URL",
@@ -228,7 +219,7 @@ if SUPPORT_CHANNEL:
         )
 
 if SUPPORT_GROUP:
-    if not re.match("(?:http|https)://", SUPPORT_CHAT):
+    if not re.match("(?:http|https)://", SUPPORT_GROUP):
         raise SystemExit(
             "[ERROR] - Your SUPPORT_CHAT url is wrong. Please ensure that it starts with https://"
         )
