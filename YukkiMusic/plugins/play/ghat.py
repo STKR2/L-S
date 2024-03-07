@@ -3,7 +3,7 @@ from YukkiMusic import app
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
-@app.on_message(command(["addme",f"ضيفني"]) 
+@app.on_message(command(["addme",f"ضيفني"]))
 async def leave_one(client, message):
     try:
         if message.from_user.username:
