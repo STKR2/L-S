@@ -2,7 +2,7 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from strings.filters import command
 from YukkiMusic import app
-
+from config import OWNER_ID
     
 @app.on_message(
     command(["اوامر","الاوامر"])
@@ -14,7 +14,7 @@ async def mmmezat(client, message):
             [
                 [
                     InlineKeyboardButton(
-                        "- الدعم .", url=f"https://t.me/T4_Mohamed"),                        
+                        "- المطور .", url=config.OWNER_ID),                        
                  ],[
                 InlineKeyboardButton(
                         "- مسح .", callback_data="close"),
