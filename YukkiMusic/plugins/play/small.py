@@ -14,7 +14,7 @@ async def mmmezat(client, message):
             [
                 [
                     InlineKeyboardButton(
-                        "- المطور .", url=config.OWNER_ID),                        
+                        "- المطور .", user_id=config.OWNER_ID),                        
                  ],[
                 InlineKeyboardButton(
                         "- مسح .", callback_data="close"),
