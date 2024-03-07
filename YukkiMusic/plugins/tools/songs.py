@@ -6,6 +6,7 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from youtube_search import YoutubeSearch
 from YukkiMusic import app
+from config import OWNER_ID
 
 def is_valid_youtube_url(url):
     # Check if the provided URL is a valid YouTube URL
@@ -58,7 +59,7 @@ async def song(_, message: Message):
 
         visit_butt = InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton(text="- المطور .", url="https://t.me/Xl444")]
+                [InlineKeyboardButton(text="- بواسطة .", url=config.OWNER_ID)]
             ]
         )
 
