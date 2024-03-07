@@ -189,20 +189,12 @@ SOUNCLOUD_IMG_URL = getenv("SOUNCLOUD_IMG_URL","https://te.legra.ph/file/402c519
 
 YOUTUBE_IMG_URL = getenv("YOUTUBE_IMG_URL","https://te.legra.ph/file/402c519808f75bd9b1803.png")
 
-SPOTIFY_ARTIST_IMG_URL = getenv(
-    "SPOTIFY_ARTIST_IMG_URL",
-    "assets/SpotifyArtist.jpeg",
-)
+SPOTIFY_ARTIST_IMG_URL = getenv("SPOTIFY_ARTIST_IMG_URL","https://graph.org/file/94fa4bb62424ea712eaa2.jpg")
 
-SPOTIFY_ALBUM_IMG_URL = getenv(
-    "SPOTIFY_ALBUM_IMG_URL",
-    "assets/SpotifyAlbum.jpeg",
-)
+SPOTIFY_ALBUM_IMG_URL = getenv("SPOTIFY_ALBUM_IMG_URL","https://graph.org/file/94fa4bb62424ea712eaa2.jpg")
 
-SPOTIFY_PLAYLIST_IMG_URL = getenv(
-    "SPOTIFY_PLAYLIST_IMG_URL",
-    "assets/SpotifyPlaylist.jpeg",
-)
+SPOTIFY_PLAYLIST_IMG_URL = getenv("SPOTIFY_PLAYLIST_IMG_URL","https://graph.org/file/94fa4bb62424ea712eaa2.jpg")
+
 
 def time_to_seconds(time):
     stringt = str(time)
