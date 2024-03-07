@@ -40,7 +40,7 @@ async def maker(client: Client, message: Message):
                 ],
                 [
                    InlineKeyboardButton(
-                        "- قناة البوت . ", user_id=config.SUPPORT_CHANNEL[0]),
+                        "- قناة البوت . ", url=config.SUPPORT_CHANNEL[0]),
                 ],       
             ]
         ),
