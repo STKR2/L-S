@@ -6,7 +6,7 @@ from YukkiMusic import app
 
 
 
-@app..on_callback_query(filters.regex("home_start"))
+@app.on_callback_query(filters.regex("home_start"))
 async def start_set(_, query: CallbackQuery):
     await query.answer("home start")
     await query.edit_message_text(
@@ -31,7 +31,7 @@ async def start_set(_, query: CallbackQuery):
     )
 
 
-@app..on_callback_query(filters.regex("user_guide"))
+@app.on_callback_query(filters.regex("user_guide"))
 @check_blacklist()
 async def guide_set(_, query: CallbackQuery):
     await query.answer("user guide")
