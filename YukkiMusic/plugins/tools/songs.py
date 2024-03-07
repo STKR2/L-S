@@ -118,7 +118,7 @@ async def video_search(client, message):
             file_name = ytdl.prepare_filename(ytdl_data)
     except Exception as e:
         return await msg.edit(f"🚫 **error:** {e}")
-    preview = wget.download(thumbnail)
+    preview = (thumbnail)
     await msg.edit("❤️‍🔥 تَحَمَيَݪ اެݪمَݪفَ...")
     await message.reply_video(
         file_name,
