@@ -11,7 +11,7 @@ def is_valid_youtube_url(url):
     # Check if the provided URL is a valid YouTube URL
     return url.startswith(("https://www.youtube.com", "http://www.youtube.com", "youtube.com"))
 
-@app.on_message(command(["يوت", "تحميل", "تنزيل", "بحث"]))
+@app.on_message(command(["يوت", "yt", "تنزيل", "بحث"]))
 async def song(_, message: Message):
     m = await message.reply_text("- يتم البحث الان .", quote=True)
 
@@ -85,7 +85,7 @@ async def song(_, message: Message):
         error_message = f"- فشل في حذف الملفات المؤقتة. \n\n**السبب :** `{ex}`"
         await m.edit_text(error_message)
 
-@app.on_message(filters.command(["ابحثلي", "video"]))
+@app.on_message(command(["تحميل", "video"]))
 async def video_search(client, message):
     ydl_opts = {
         "format": "best",
@@ -111,7 +111,7 @@ async def video_search(client, message):
     except Exception as e:
         print(e)
     try:
-        msg = await message.reply("❤️‍🔥 جَاެࢪي اެݪبَحثَ...")
+        msg = await message.reply("- يتم البحث الان .")
         with yt_dlp.YoutubeDL(ydl_opts) as ytdl:
             ytdl_data = ytdl.extract_info(link, download=True)
             file_name = ytdl.prepare_filename(ytdl_data)
@@ -119,7 +119,7 @@ async def video_search(client, message):
         return await msg.edit(f"🚫 **error:** {e}")
     thumb_path = f"thumb{title}.jpg"
     open(thumb_path, "wb").write(thumb.content)
-    await msg.edit("❤️‍🔥 تَحَمَيَݪ اެݪمَݪفَ...")
+    await msg.edit("- تم الرفع انتضر قليلاً .")
     await message.reply_video(
         file_name,
         duration=int(ytdl_data["duration"]),
@@ -131,4 +131,4 @@ async def video_search(client, message):
         os.remove(thumb_path)
         await msg.delete()
     except Exception as ex:
-        print(f"Error removing file: {ex}")
+        print(f"- فشل : {ex}")
