@@ -1,7 +1,7 @@
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from datetime import datetime
-from YukkiMusic import app
+from strings.filters import command
 from YukkiMusic import app
 
     
