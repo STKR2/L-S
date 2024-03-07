@@ -193,9 +193,7 @@ TELEGRAM_VIDEO_URL = getenv("TELEGRAM_VIDEO_URL", "https://graph.org/file/8882cb
 STREAM_IMG_URL = getenv("STREAM_IMG_URL","https://graph.org/file/8041894fa11e8100a9d19.jpg"
 )
 
-SOUNCLOUD_IMG_URL = getenv(
-    "SOUNCLOUD_IMG_URL",
-    "assets/Soundcloud.jpeg",
+SOUNCLOUD_IMG_URL = getenv("SOUNCLOUD_IMG_URL", "https://te.legra.ph/file/402c519808f75bd9b1803.jpg"
 )
 
 YOUTUBE_IMG_URL = getenv("YOUTUBE_IMG_URL", "https://te.legra.ph/file/402c519808f75bd9b1803.jpg"
