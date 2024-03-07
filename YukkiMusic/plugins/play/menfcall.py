@@ -25,7 +25,7 @@ async def strcall(client, message):
                 mut = "~ ساد المايك "
             user = await client.get_users(participant.user_id)
             k += 1
-            text += f"{k}-{user.mention}-{mut}\n"
+            text += f"~ {k}{user.mention} {mut}\n"
         text += f"\n~ عددهم : {len(participants)}\n️"  
 
         # إضافة زر شفاف في الأسفل
@@ -53,7 +53,7 @@ async def strcall(client, message):
                 mut = "~ ساد المايك "
             user = await client.get_users(participant.user_id)
             k += 1
-            text += f"{k}-{user.mention}-{mut}\n"
+            text += f"~{k} {user.mention} {mut}\n"
         text += f"\n~ عددهم : {len(participants)}\n️"
 
         # إضافة زر شفاف في الأسفل
