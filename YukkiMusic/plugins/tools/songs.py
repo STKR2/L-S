@@ -113,7 +113,7 @@ async def video_search(client, message):
         print(e)
     try:
         msg = await message.reply("❤️‍🔥 جَاެࢪي اެݪبَحثَ...")
-        with YoutubeDL(ydl_opts) as ytdl:
+        with yt_dlp.YoutubeDL(ydl_opts) as ytdl:
             ytdl_data = ytdl.extract_info(link, download=True)
             file_name = ytdl.prepare_filename(ytdl_data)
     except Exception as e:
