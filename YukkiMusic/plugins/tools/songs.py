@@ -85,8 +85,7 @@ async def song(_, message: Message):
         error_message = f"- فشل في حذف الملفات المؤقتة. \n\n**السبب :** `{ex}`"
         await m.edit_text(error_message)
 
-
-@app.on_message(command(["ابحثلي", "video"]))
+@app.on_message(filters.command(["ابحثلي", "video"]))
 async def video_search(client, message):
     ydl_opts = {
         "format": "best",
@@ -118,17 +117,18 @@ async def video_search(client, message):
             file_name = ytdl.prepare_filename(ytdl_data)
     except Exception as e:
         return await msg.edit(f"🚫 **error:** {e}")
-    preview = thumbnail
+    thumb_path = f"thumb{title}.jpg"
+    open(thumb_path, "wb").write(thumb.content)
     await msg.edit("❤️‍🔥 تَحَمَيَݪ اެݪمَݪفَ...")
     await message.reply_video(
         file_name,
         duration=int(ytdl_data["duration"]),
-        thumb=preview,
+        thumb=thumb_path,
         caption=ytdl_data["title"],
     )
     try:
         os.remove(file_name)
+        os.remove(thumb_path)
+        await msg.delete()
     except Exception as ex:
         print(f"Error removing file: {ex}")
-    
-    await msg.delete()
