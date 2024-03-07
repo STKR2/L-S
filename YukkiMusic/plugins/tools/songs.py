@@ -8,25 +8,22 @@ from youtube_search import YoutubeSearch
 from YukkiMusic import app
 
 def is_valid_youtube_url(url):
-    # Check if the provided URL is a valid YouTube URL
     return url.startswith(("https://www.youtube.com", "http://www.youtube.com", "youtube.com"))
 
-@app.on_message(command(["يوت", "تحميل", "تنزيل", "بحث"]))
+@app.on_message(filters.command(["يوت", "تحميل", "تنزيل", "بحث"]))
 async def song(_, message: Message):
     m = await message.reply_text("- يتم البحث الان .", quote=True)
 
-    query = " ".join(str(i) for i in message.command[1:])
+    query = message.text.split(" ", 1)[1]  # Get the text after the command
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
 
     try:
         if is_valid_youtube_url(query):
-            # If it's a valid YouTube URL, use it directly
             link = query
         else:
-            # Otherwise, perform a search using the provided keyword
             results = YoutubeSearch(query, max_results=5).to_dict()
             if not results:
-                raise Exception("- لايوجد بحث .")
+                raise Exception("- لايوجد نتائج البحث .")
             
             link = f"https://youtube.com{results[0]['url_suffix']}"
 
@@ -62,15 +59,26 @@ async def song(_, message: Message):
             ]
         )
 
-        # Reply to the user who initiated the search
-        await message.reply_audio(
-            audio=audio_file,
-            caption=rep,
-            thumb=thumb_name,
-            title=title,
-            duration=dur,
-            reply_markup=visit_butt,
-        )
+        # Reply to the user or channel
+        if message.chat.type == "private":
+            await message.reply_audio(
+                audio=audio_file,
+                caption=rep,
+                thumb=thumb_name,
+                title=title,
+                duration=dur,
+                reply_markup=visit_butt,
+            )
+        else:
+            await app.send_audio(
+                chat_id=message.chat.id,
+                audio=audio_file,
+                caption=rep,
+                thumb=thumb_name,
+                title=title,
+                duration=dur,
+                reply_markup=visit_butt,
+            )
 
         await m.delete()
 
