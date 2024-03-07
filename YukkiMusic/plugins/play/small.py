@@ -2,7 +2,7 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from strings.filters import command
 from YukkiMusic import app
-from config
+import config
     
 @app.on_message(
     command(["اوامر","الاوامر"])
