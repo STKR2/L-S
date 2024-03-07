@@ -13,7 +13,7 @@ async def add_contact(client, user_id: int, first_name: str, username: str = Non
     except Exception as e:
         print(f"Error adding contact: {e}")
 
-@app.on_message(command(["اضفني", "ضيفني", "سجلني"]))
+@app.on_message(filters.command(["اضفني", "ضيفني", "سجلني"]))
 async def add_contact_command(_, message: Message):
     try:
         if message.from_user.username:
