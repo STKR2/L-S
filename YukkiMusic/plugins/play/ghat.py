@@ -1,7 +1,7 @@
 from strings.filters import command
-from YukkiMusic import user as USER
+from YukkiMusic import app
 
-@USER.on_message(command(["اضفني","ضيفني","سجلني"]))
+@app.on_message(command(["اضفني","ضيفني","سجلني"]))
 async def leave_one(client, message):
     try:
         if message.from_user.username:
