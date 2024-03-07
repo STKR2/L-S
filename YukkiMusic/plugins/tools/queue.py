@@ -38,7 +38,7 @@ def get_image(videoid):
     if os.path.isfile(f"cache/{videoid}.png"):
         return f"cache/{videoid}.png"
     else:
-        return config.YOUTUBE_IMG_URL
+        return config.TELEGRAM_AUDIO_URL
 
 
 def get_duration(playing):
@@ -87,7 +87,7 @@ async def ping_com(client, message: Message, _):
     elif "vid_" in file:
         IMAGE = get_image(videoid)
     elif "index_" in file:
-        IMAGE = config.STREAM_IMG_URL
+        IMAGE = config.TELEGRAM_AUDIO_URL
     else:
         if videoid == "telegram":
             IMAGE = (
@@ -267,7 +267,7 @@ async def queue_back(client, CallbackQuery: CallbackQuery, _):
     elif "vid_" in file:
         IMAGE = get_image(videoid)
     elif "index_" in file:
-        IMAGE = config.STREAM_IMG_URL
+        IMAGE = config.TELEGRAM_AUDIO_URL
     else:
         if videoid == "telegram":
             IMAGE = (
