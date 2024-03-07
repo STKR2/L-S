@@ -169,66 +169,32 @@ autoclean = []
 
 
 # Images
-START_IMG_URL = getenv("START_IMG_URL", None)
+START_IMG_URL = getenv("START_IMG_URL", "https://te.legra.ph/file/402c519808f75bd9b1803.jpg" )
 
-PING_IMG_URL = getenv(
-    "PING_IMG_URL",
-    "assets/Ping.jpeg",
-)
+PING_IMG_URL = getenv("PING_IMG_URL", "https://te.legra.ph/file/402c519808f75bd9b1803.jpg"
+ 
+PLAYLIST_IMG_URL = getenv("PLAYLIST_IMG_URL", " https://graph.org/file/8882cbd7cc786826d9ecb.jpg" 
 
-PLAYLIST_IMG_URL = getenv(
-    "PLAYLIST_IMG_URL",
-    "assets/Playlist.jpeg",
-)
+GLOBAL_IMG_URL = getenv("GLOBAL_IMG_URL",  " https://te.legra.ph/file/402c519808f75bd9b1803.jpg" 
+ 
+STATS_IMG_URL = getenv("STATS_IMG_URL", "https://te.legra.ph/file/402c519808f75bd9b1803.jpg"
 
-GLOBAL_IMG_URL = getenv(
-    "GLOBAL_IMG_URL",
-    "assets/Global.jpeg",
-)
+TELEGRAM_AUDIO_URL = getenv("TELEGRAM_AUDIO_URL", "https://graph.org/file/8882cbd7cc786826d9ecb.jpg"
 
-STATS_IMG_URL = getenv(
-    "STATS_IMG_URL",
-    "assets/Stats.jpeg",
-)
+TELEGRAM_VIDEO_URL = getenv("TELEGRAM_VIDEO_URL", "https://graph.org/file/8882cbd7cc786826d9ecb.jpg"
 
-TELEGRAM_AUDIO_URL = getenv(
-    "TELEGRAM_AUDIO_URL",
-    "assets/Audio.jpeg",
-)
+STREAM_IMG_URL = getenv("STREAM_IMG_URL", "https://te.legra.ph/file/402c519808f75bd9b1803.jpg"
+  
+SOUNCLOUD_IMG_URL = getenv("SOUNCLOUD_IMG_URL", "https://te.legra.ph/file/402c519808f75bd9b1803.jpg"
+  
+YOUTUBE_IMG_URL = getenv( "YOUTUBE_IMG_URL", "https://te.legra.ph/file/402c519808f75bd9b1803.jpg"
+  
+SPOTIFY_ARTIST_IMG_URL = getenv("SPOTIFY_ARTIST_IMG_URL", "https://te.legra.ph/file/402c519808f75bd9b1803.jpg"
 
-TELEGRAM_VIDEO_URL = getenv(
-    "TELEGRAM_VIDEO_URL",
-    "assets/Video.jpeg",
-)
+SPOTIFY_ALBUM_IMG_URL = getenv("SPOTIFY_ALBUM_IMG_URL", "https://te.legra.ph/file/402c519808f75bd9b1803.jpg"
+    
+SPOTIFY_PLAYLIST_IMG_URL = getenv("SPOTIFY_PLAYLIST_IMG_URL", "https://te.legra.ph/file/402c519808f75bd9b1803.jpg"
 
-STREAM_IMG_URL = getenv(
-    "STREAM_IMG_URL",
-    "assets/Stream.jpeg",
-)
-
-SOUNCLOUD_IMG_URL = getenv(
-    "SOUNCLOUD_IMG_URL",
-    "assets/Soundcloud.jpeg",
-)
-
-YOUTUBE_IMG_URL = getenv(
-    "YOUTUBE_IMG_URL",
-    "assets/Youtube.jpeg",
-)
-
-SPOTIFY_ARTIST_IMG_URL = getenv(
-    "SPOTIFY_ARTIST_IMG_URL",
-    "assets/SpotifyArtist.jpeg",
-)
-
-SPOTIFY_ALBUM_IMG_URL = getenv(
-    "SPOTIFY_ALBUM_IMG_URL",
-    "assets/SpotifyAlbum.jpeg",
-)
-
-SPOTIFY_PLAYLIST_IMG_URL = getenv(
-    "SPOTIFY_PLAYLIST_IMG_URL",
-    "assets/SpotifyPlaylist.jpeg",
 )
 
 
