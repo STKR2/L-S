@@ -169,25 +169,25 @@ autoclean = []
 
 
 # Images
-START_IMG_URL = getenv("START_IMG_URL", "https://te.legra.ph/file/402c519808f75bd9b1803.jpg")
+START_IMG_URL = getenv("START_IMG_URL", "https://te.legra.ph/file/402c519808f75bd9b1803.png")
 
-PING_IMG_URL = getenv("PING_IMG_URL","https://te.legra.ph/file/402c519808f75bd9b1803.jpg")
+PING_IMG_URL = getenv("PING_IMG_URL","https://te.legra.ph/file/402c519808f75bd9b1803.png")
 
-PLAYLIST_IMG_URL = getenv("PLAYLIST_IMG_URL","https://te.legra.ph/file/402c519808f75bd9b1803.jpg")
+PLAYLIST_IMG_URL = getenv("PLAYLIST_IMG_URL","https://te.legra.ph/file/402c519808f75bd9b1803.png")
 
-GLOBAL_IMG_URL = getenv("GLOBAL_IMG_URL","https://te.legra.ph/file/402c519808f75bd9b1803.jpg")
+GLOBAL_IMG_URL = getenv("GLOBAL_IMG_URL","https://te.legra.ph/file/402c519808f75bd9b1803.png")
 
-STATS_IMG_URL = getenv("STATS_IMG_URL","https://te.legra.ph/file/402c519808f75bd9b1803.jpg")
+STATS_IMG_URL = getenv("STATS_IMG_URL","https://te.legra.ph/file/402c519808f75bd9b1803.png")
 
-TELEGRAM_AUDIO_URL = getenv("TELEGRAM_AUDIO_URL","https://te.legra.ph/file/402c519808f75bd9b1803.jpg")
+TELEGRAM_AUDIO_URL = getenv("TELEGRAM_AUDIO_URL","https://te.legra.ph/file/402c519808f75bd9b1803.png")
 
-TELEGRAM_VIDEO_URL = getenv("TELEGRAM_VIDEO_URL","https://te.legra.ph/file/402c519808f75bd9b1803.jpg")
+TELEGRAM_VIDEO_URL = getenv("TELEGRAM_VIDEO_URL","https://te.legra.ph/file/402c519808f75bd9b1803.png")
 
-STREAM_IMG_URL = getenv("STREAM_IMG_URL","https://te.legra.ph/file/402c519808f75bd9b1803.jpg")
+STREAM_IMG_URL = getenv("STREAM_IMG_URL","https://te.legra.ph/file/402c519808f75bd9b1803.png")
 
-SOUNCLOUD_IMG_URL = getenv("SOUNCLOUD_IMG_URL","https://te.legra.ph/file/402c519808f75bd9b1803.jpg")
+SOUNCLOUD_IMG_URL = getenv("SOUNCLOUD_IMG_URL","https://te.legra.ph/file/402c519808f75bd9b1803.png")
 
-YOUTUBE_IMG_URL = getenv("YOUTUBE_IMG_URL","https://te.legra.ph/file/402c519808f75bd9b1803.jpg")
+YOUTUBE_IMG_URL = getenv("YOUTUBE_IMG_URL","https://te.legra.ph/file/402c519808f75bd9b1803.png")
 
 SPOTIFY_ARTIST_IMG_URL = getenv(
     "SPOTIFY_ARTIST_IMG_URL",
