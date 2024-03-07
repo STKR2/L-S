@@ -38,7 +38,7 @@ async def song(_, message: Message):
         duration = results[0]["duration"]
 
     except Exception as ex:
-        error_message = f"- فشل .\n\nالسبب : {ex}"
+        error_message = f"- فشل .\n\n**السبب :** `{ex}`"
         return await m.edit_text(error_message)
 
     await m.edit_text("- تم الرفع انتضر قليلاً .")
@@ -49,7 +49,7 @@ async def song(_, message: Message):
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
 
-        rep = f"- الأسم : {title[:23]}\n- الوقت : {duration}\n- بواسطة  : {message.from_user.first_name}"
+        rep = f"**- الأسم :** [{title[:23]}]({link})\n**- الوقت :** `{duration}`\n**- بواسطة  :** {message.from_user.first_name}"
 
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
@@ -75,12 +75,12 @@ async def song(_, message: Message):
         await m.delete()
 
     except Exception as ex:
-        error_message = f"- فشل في تحميل الفيديو من اليوتيوب. \n\nالسبب : {ex}"
+        error_message = f"- فشل في تحميل الفيديو من YouTube. \n\n**السبب :** `{ex}`"
         await m.edit_text(error_message)
 
     try:
         os.remove(audio_file)
         os.remove(thumb_name)
     except Exception as ex:
-        error_message = f"- فشل في حذف الملفات المؤقتة . \n\nالسبب : {ex}"
+        error_message = f"- فشل في حذف الملفات المؤقتة. \n\n**السبب :** `{ex}`"
         await m.edit_text(error_message)
