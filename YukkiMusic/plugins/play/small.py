@@ -32,7 +32,6 @@ async def start_set(_, query: CallbackQuery):
 
 
 @app.on_callback_query(filters.regex("user_guide"))
-@check_blacklist()
 async def guide_set(_, query: CallbackQuery):
     await query.answer("user guide")
     await query.edit_message_text(
@@ -103,20 +102,19 @@ async def user_set(_, query: CallbackQuery):
     
    
 
-@app.on_message(command(["الاوامر", f"اوامر"])
-async def alive(c: Client, message: Message):
+@app.on_message(command(["الاوامر", "اوامر"]))
+async def alive(message: Message):
     chat_id = message.chat.id
     current_time = datetime.utcnow()
     buttons = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("🥇 اوامر البوت ", callback_data="user_command"),
+                InlineKeyboardButton("🥇 اوامر البوت", callback_data="user_command"),
             ]
         ]
     )
     text = f"**- تابع الاوامر في الاسفل ↓ **"
-    await c.send_photo(
-        chat_id,
+    await message.reply_photo(
         photo=f"https://te.legra.ph/file/402c519808f75bd9b1803.jpg",
         caption=text,
         reply_markup=buttons,
