@@ -66,15 +66,14 @@ async def song(_, message: Message):
         )
 
         # Reply to the user or channel
-        if message.chat.type in ["private", "group", "supergroup", "channel"]:
-            await message.reply_audio(
-                audio=audio_file,
-                caption=rep,
-                thumb=thumb_name,
-                title=title,
-                duration=dur,
-                reply_markup=visit_butt,
-            )
+        await message.reply_audio(
+            audio=audio_file,
+            caption=rep,
+            thumb=thumb_name,
+            title=title,
+            duration=dur,
+            reply_markup=visit_butt,
+        )
 
         await m.delete()
 
