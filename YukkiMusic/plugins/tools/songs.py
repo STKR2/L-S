@@ -75,6 +75,9 @@ async def song(_, message: Message):
 
         await m.delete()
 
+        # Delete the original user's message
+        await app.delete_messages(chat_id=message.chat.id, message_ids=message.message_id)
+
     except Exception as ex:
         error_message = f"- فشل في تحميل الفيديو من YouTube. \n\n**السبب :** `{ex}`"
         await m.edit_text(error_message)
