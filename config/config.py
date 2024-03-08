@@ -169,41 +169,28 @@ autoclean = []
 
 
 # Images
-START_IMG_URL = getenv("START_IMG_URL", None)
+START_IMG_URL = getenv("START_IMG_URL", "https://graph.org/file/8041894fa11e8100a9d19.jpg"
+                       
+)
+PING_IMG_URL = getenv("PING_IMG_URL", "https://graph.org/file/8041894fa11e8100a9d19.jpg"
 
-PING_IMG_URL = getenv(
-    "PING_IMG_URL",
-    "assets/Ping.jpeg",
+)                      
+PLAYLIST_IMG_URL = getenv("PLAYLIST_IMG_URL", "https://graph.org/file/ce800ecf11126af579375.jpg"
 )
 
-PLAYLIST_IMG_URL = getenv(
-    "PLAYLIST_IMG_URL",
-    "assets/Playlist.jpeg",
+GLOBAL_IMG_URL = getenv("GLOBAL_IMG_URL", "https://graph.org/file/8041894fa11e8100a9d19.jpg"
 )
 
-GLOBAL_IMG_URL = getenv(
-    "GLOBAL_IMG_URL",
-    "assets/Global.jpeg",
+STATS_IMG_URL = getenv("STATS_IMG_URL", "https://graph.org/file/8041894fa11e8100a9d19.jpg"
 )
 
-STATS_IMG_URL = getenv(
-    "STATS_IMG_URL",
-    "assets/Stats.jpeg",
+TELEGRAM_AUDIO_URL = getenv("TELEGRAM_AUDIO_URL", "https://graph.org/file/8041894fa11e8100a9d19.jpg"
 )
 
-TELEGRAM_AUDIO_URL = getenv(
-    "TELEGRAM_AUDIO_URL",
-    "assets/Audio.jpeg",
+TELEGRAM_VIDEO_URL = getenv("TELEGRAM_VIDEO_URL", "https://graph.org/file/8041894fa11e8100a9d19.jpg"
 )
 
-TELEGRAM_VIDEO_URL = getenv(
-    "TELEGRAM_VIDEO_URL",
-    "assets/Video.jpeg",
-)
-
-STREAM_IMG_URL = getenv(
-    "STREAM_IMG_URL",
-    "assets/Stream.jpeg",
+STREAM_IMG_URL = getenv("STREAM_IMG_URL","https://graph.org/file/8041894fa11e8100a9d19.jpg"
 )
 
 SOUNCLOUD_IMG_URL = getenv(
@@ -211,9 +198,7 @@ SOUNCLOUD_IMG_URL = getenv(
     "assets/Soundcloud.jpeg",
 )
 
-YOUTUBE_IMG_URL = getenv(
-    "YOUTUBE_IMG_URL",
-    "assets/YOUTUBE.jpeg",
+YOUTUBE_IMG_URL = getenv("YOUTUBE_IMG_URL", "https://graph.org/file/8041894fa11e8100a9d19.jpg"
 )
 
 SPOTIFY_ARTIST_IMG_URL = getenv(
