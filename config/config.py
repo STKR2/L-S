@@ -182,7 +182,7 @@ GLOBAL_IMG_URL = getenv("GLOBAL_IMG_URL", "https://graph.org/file/8041894fa11e81
 STATS_IMG_URL = getenv("STATS_IMG_URL", "https://graph.org/file/8041894fa11e8100a9d19.jpg"
 )
 
-TELEGRAM_AUDIO_URL = int(getenv("TELEGRAM_AUDIO_URL", "https://graph.org/file/8041894fa11e8100a9d19.jpg"
+TELEGRAM_AUDIO_URL = getenv("TELEGRAM_AUDIO_URL", "https://graph.org/file/8041894fa11e8100a9d19.jpg"
 )
 
 TELEGRAM_VIDEO_URL = getenv("TELEGRAM_VIDEO_URL", "https://graph.org/file/8041894fa11e8100a9d19.jpg"
@@ -196,7 +196,7 @@ SOUNCLOUD_IMG_URL = getenv(
     "assets/Soundcloud.jpeg",
 )
 
-YOUTUBE_IMG_URL = int(getenv("YOUTUBE_IMG_URL", "https://graph.org/file/8041894fa11e8100a9d19.jpg"
+YOUTUBE_IMG_URL = getenv("YOUTUBE_IMG_URL", "https://graph.org/file/8041894fa11e8100a9d19.jpg"
 )
 
 SPOTIFY_ARTIST_IMG_URL = getenv(
