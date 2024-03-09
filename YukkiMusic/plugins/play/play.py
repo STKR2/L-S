@@ -456,7 +456,7 @@ async def play_commnd(
             )
             await mystic.delete()
             await message.reply_photo(
-                photo=img,
+                photo="https://graph.org/file/8041894fa11e8100a9d19.jpg",
                 caption=cap,
                 reply_markup=InlineKeyboardMarkup(buttons),
             )
@@ -496,7 +496,7 @@ async def play_commnd(
                 )
                 await mystic.delete()
                 await message.reply_photo(
-                    photo=img,
+                    photo="https://graph.org/file/8041894fa11e8100a9d19.jpg",
                     caption=cap,
                     reply_markup=InlineKeyboardMarkup(buttons),
                 )
