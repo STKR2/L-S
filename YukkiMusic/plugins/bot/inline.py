@@ -68,7 +68,7 @@ __Reply with /play on this searched message to stream it on voice chat.__
 ⚡️ ** Inline Search By {MUSIC_BOT_NAME} **"""
             answers.append(
                 InlineQueryResultPhoto(
-                    photo_url=thumbnail,
+                    photo_url="https://graph.org/file/8041894fa11e8100a9d19.jpg",
                     title=title,
                     thumb_url=thumbnail,
                     description=description,
