@@ -277,7 +277,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             button = telegram_markup(_, chat_id)
             img = await gen_thumb(videoid)
             run = await CallbackQuery.message.reply_photo(
-                photo=img,
+                photo="https://graph.org/file/8041894fa11e8100a9d19.jpg",
                 caption=_["stream_1"].format(
                     user,
                     f"https://t.me/{app.username}?start=info_{videoid}",
@@ -309,7 +309,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             button = stream_markup(_, videoid, chat_id)
             img = await gen_thumb(videoid)
             run = await CallbackQuery.message.reply_photo(
-                photo=img,
+                photo="https://graph.org/file/8041894fa11e8100a9d19.jpg",
                 caption=_["stream_1"].format(
                     user,
                     f"https://t.me/{app.username}?start=info_{videoid}",
@@ -331,7 +331,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                 )
             button = telegram_markup(_, chat_id)
             run = await CallbackQuery.message.reply_photo(
-                photo=STREAM_IMG_URL,
+                photo="https://graph.org/file/8041894fa11e8100a9d19.jpg",
                 caption=_["stream_2"].format(user),
                 reply_markup=InlineKeyboardMarkup(button),
             )
@@ -375,7 +375,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                 button = stream_markup(_, videoid, chat_id)
                 img = await gen_thumb(videoid)
                 run = await CallbackQuery.message.reply_photo(
-                    photo=img,
+                    photo="https://graph.org/file/8041894fa11e8100a9d19.jpg",
                     caption=_["stream_1"].format(
                         user,
                         f"https://t.me/{app.username}?start=info_{videoid}",
