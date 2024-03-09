@@ -270,7 +270,7 @@ async def play_commnd(
                 except Exception:
                     return await mystic.edit_text(_["play_3"])
                 streamtype = "youtube"
-                img = details["thumb"]
+                img = "https://graph.org/file/8041894fa11e8100a9d19.jpg"
                 cap = _["play_11"].format(
                     details["title"], details["duration_min"]
                 )
@@ -294,7 +294,7 @@ async def play_commnd(
             except Exception as e:
                 return await mystic.edit_text(_["play_3"])
             streamtype = "youtube"
-            img = details["thumb"]
+            img = "https://graph.org/file/8041894fa11e8100a9d19.jpg"
             cap = _["play_11"].format(
                 details["title"], details["duration_min"]
             )
@@ -456,7 +456,7 @@ async def play_commnd(
             )
             await mystic.delete()
             await message.reply_photo(
-                photo=img,
+                photo="https://graph.org/file/8041894fa11e8100a9d19.jpg",
                 caption=cap,
                 reply_markup=InlineKeyboardMarkup(buttons),
             )
@@ -476,7 +476,7 @@ async def play_commnd(
                 )
                 await mystic.delete()
                 await message.reply_photo(
-                    photo=details["thumb"],
+                    photo="https://graph.org/file/8041894fa11e8100a9d19.jpg",
                     caption=_["play_11"].format(
                         details["title"].title(),
                         details["duration_min"],
@@ -496,7 +496,7 @@ async def play_commnd(
                 )
                 await mystic.delete()
                 await message.reply_photo(
-                    photo=img,
+                    photo="https://graph.org/file/8041894fa11e8100a9d19.jpg",
                     caption=cap,
                     reply_markup=InlineKeyboardMarkup(buttons),
                 )
