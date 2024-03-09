@@ -167,51 +167,66 @@ clean = {}
 
 autoclean = []
 
-START_IMG_URL = getenv("START_IMG_URL", "https://graph.org/file/8041894fa11e8100a9d19.jpg"
-                       
-)
-PING_IMG_URL = getenv("PING_IMG_URL", "https://graph.org/file/8041894fa11e8100a9d19.jpg"
+START_IMG_URL = getenv("START_IMG_URL", None)
 
-)                      
-PLAYLIST_IMG_URL = getenv("PLAYLIST_IMG_URL", "https://graph.org/file/ce800ecf11126af579375.jpg"
+PING_IMG_URL = getenv(
+    "PING_IMG_URL",
+    "https://telegra.ph/file/91533956c91d0fd7c9f20.jpg",
 )
 
-GLOBAL_IMG_URL = getenv("GLOBAL_IMG_URL", "https://graph.org/file/8041894fa11e8100a9d19.jpg"
+PLAYLIST_IMG_URL = getenv(
+    "PLAYLIST_IMG_URL",
+    "https://telegra.ph/file/f4edfbd83ec3150284aae.jpg",
 )
 
-STATS_IMG_URL = getenv("STATS_IMG_URL", "https://graph.org/file/8041894fa11e8100a9d19.jpg"
+GLOBAL_IMG_URL = getenv(
+    "GLOBAL_IMG_URL",
+    "https://telegra.ph/file/de1db74efac1770b1e8e9.jpg",
 )
 
-TELEGRAM_AUDIO_URL = getenv("TELEGRAM_AUDIO_URL", "https://graph.org/file/8041894fa11e8100a9d19.jpg"
+STATS_IMG_URL = getenv(
+    "STATS_IMG_URL",
+    "https://telegra.ph/file/4dd9e2c231eaf7c290404.jpg",
 )
 
-TELEGRAM_VIDEO_URL = getenv("TELEGRAM_VIDEO_URL", "https://graph.org/file/8041894fa11e8100a9d19.jpg"
+TELEGRAM_AUDIO_URL = getenv(
+    "TELEGRAM_AUDIO_URL",
+    "https://telegra.ph/file/8234d704952738ebcda7f.jpg",
 )
 
-STREAM_IMG_URL = getenv("STREAM_IMG_URL","https://graph.org/file/8041894fa11e8100a9d19.jpg"
+TELEGRAM_VIDEO_URL = getenv(
+    "TELEGRAM_VIDEO_URL",
+    "https://telegra.ph/file/8d02ff3bde400e465219a.jpg",
+)
+
+STREAM_IMG_URL = getenv(
+    "STREAM_IMG_URL",
+    "https://telegra.ph/file/e24f4a5f695ec5576a8f3.jpg",
 )
 
 SOUNCLOUD_IMG_URL = getenv(
     "SOUNCLOUD_IMG_URL",
-    "assets/Soundcloud.jpeg",
+    "https://telegra.ph/file/7645d1e04021323c21db9.jpg",
 )
 
-YOUTUBE_IMG_URL = getenv("YOUTUBE_IMG_URL", "https://graph.org/file/8041894fa11e8100a9d19.jpg"
+YOUTUBE_IMG_URL = getenv(
+    "YOUTUBE_IMG_URL",
+    "https://telegra.ph/file/76d29aa31c40a7f026d7e.jpg",
 )
 
 SPOTIFY_ARTIST_IMG_URL = getenv(
     "SPOTIFY_ARTIST_IMG_URL",
-    "assets/SpotifyArtist.jpeg",
+    "https://telegra.ph/file/b7758d4e1bc32aa9fb6ec.jpg",
 )
 
 SPOTIFY_ALBUM_IMG_URL = getenv(
     "SPOTIFY_ALBUM_IMG_URL",
-    "assets/SpotifyAlbum.jpeg",
+    "https://telegra.ph/file/60ed85638e00df10985db.jpg",
 )
 
 SPOTIFY_PLAYLIST_IMG_URL = getenv(
     "SPOTIFY_PLAYLIST_IMG_URL",
-    "assets/SpotifyPlaylist.jpeg",
+    "https://telegra.ph/file/f4edfbd83ec3150284aae.jpg",
 )
 
 def time_to_seconds(time):
