@@ -1,9 +1,9 @@
 #
-# Copyright (C) 2021-present by TeamYukki@Github, < https://github.com/TeamYukki >.
+# Copyright (C) 2023-2024 by YukkiOwner@Github, < https://github.com/YukkiOwner >.
 #
-# This file is part of < https://github.com/TeamYukki/YukkiMusicBot > project,
+# This file is part of < https://github.com/YukkiOwner/YukkiMusicBot > project,
 # and is released under the "GNU v3.0 License Agreement".
-# Please see < https://github.com/TeamYukki/YukkiMusicBot/blob/master/LICENSE >
+# Please see < https://github.com/YukkiOwner/YukkiMusicBot/blob/master/LICENSE >
 #
 # All rights reserved.
 #
@@ -15,7 +15,6 @@ from typing import Union
 
 import aiohttp
 import yt_dlp
-from pyrogram.enums import MessageEntityType
 from pyrogram.types import Message
 from youtubesearchpython.__future__ import VideosSearch
 
@@ -74,13 +73,13 @@ class YouTubeAPI:
                 break
             if message.entities:
                 for entity in message.entities:
-                    if entity.type == MessageEntityType.URL:
+                    if entity.type == "url":
                         text = message.text or message.caption
                         offset, length = entity.offset, entity.length
                         break
             elif message.caption_entities:
                 for entity in message.caption_entities:
-                    if entity.type == MessageEntityType.TEXT_LINK:
+                    if entity.type == "text_link":
                         return entity.url
         if offset in (None,):
             return None
@@ -280,7 +279,7 @@ class YouTubeAPI:
 
         def audio_dl():
             ydl_optssx = {
-                "format": "bestaudio/best",
+                "format": "bestaudio[ext=m4a]",
                 "outtmpl": "downloads/%(id)s.%(ext)s",
                 "geo_bypass": True,
                 "nocheckcertificate": True,
