@@ -167,7 +167,7 @@ clean = {}
 
 autoclean = []
 
-
+PING_IMG_URL = getenv("PING_IMG_URL", "https://graph.org/file/8041894fa11e8100a9d19.jpg"
 
 def time_to_seconds(time):
     stringt = str(time)
