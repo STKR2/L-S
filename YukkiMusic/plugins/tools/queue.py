@@ -53,8 +53,7 @@ def get_duration(playing):
 
 
 @app.on_message(
-    filters.command(QUEUE_COMMAND) 
-    & filters.group 
+    filters.command(QUEUE_COMMAND)  
     & ~BANNED_USERS
 )
 @language
