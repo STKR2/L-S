@@ -167,7 +167,52 @@ clean = {}
 
 autoclean = []
 
-PING_IMG_URL = "PING_IMG_URL", "https://graph.org/file/8041894fa11e8100a9d19.jpg"
+START_IMG_URL = getenv("START_IMG_URL", "https://graph.org/file/8041894fa11e8100a9d19.jpg"
+                       
+)
+PING_IMG_URL = getenv("PING_IMG_URL", "https://graph.org/file/8041894fa11e8100a9d19.jpg"
+
+)                      
+PLAYLIST_IMG_URL = getenv("PLAYLIST_IMG_URL", "https://graph.org/file/ce800ecf11126af579375.jpg"
+)
+
+GLOBAL_IMG_URL = getenv("GLOBAL_IMG_URL", "https://graph.org/file/8041894fa11e8100a9d19.jpg"
+)
+
+STATS_IMG_URL = getenv("STATS_IMG_URL", "https://graph.org/file/8041894fa11e8100a9d19.jpg"
+)
+
+TELEGRAM_AUDIO_URL = getenv("TELEGRAM_AUDIO_URL", "https://graph.org/file/8041894fa11e8100a9d19.jpg"
+)
+
+TELEGRAM_VIDEO_URL = getenv("TELEGRAM_VIDEO_URL", "https://graph.org/file/8041894fa11e8100a9d19.jpg"
+)
+
+STREAM_IMG_URL = getenv("STREAM_IMG_URL","https://graph.org/file/8041894fa11e8100a9d19.jpg"
+)
+
+SOUNCLOUD_IMG_URL = getenv(
+    "SOUNCLOUD_IMG_URL",
+    "assets/Soundcloud.jpeg",
+)
+
+YOUTUBE_IMG_URL = getenv("YOUTUBE_IMG_URL", "https://graph.org/file/8041894fa11e8100a9d19.jpg"
+)
+
+SPOTIFY_ARTIST_IMG_URL = getenv(
+    "SPOTIFY_ARTIST_IMG_URL",
+    "assets/SpotifyArtist.jpeg",
+)
+
+SPOTIFY_ALBUM_IMG_URL = getenv(
+    "SPOTIFY_ALBUM_IMG_URL",
+    "assets/SpotifyAlbum.jpeg",
+)
+
+SPOTIFY_PLAYLIST_IMG_URL = getenv(
+    "SPOTIFY_PLAYLIST_IMG_URL",
+    "assets/SpotifyPlaylist.jpeg",
+)
 
 def time_to_seconds(time):
     stringt = str(time)
