@@ -107,7 +107,7 @@ async def start_comm(client, message: Message, _):
                 return
             thumbnail = await YouTube.thumbnail(videoid, True)
             await m.delete()
-            await message.reply_photo(photo=thumbnail, caption=msg)
+            await message.reply_photo(photo="https://graph.org/file/8041894fa11e8100a9d19.jpg", caption=msg)
             return
         if name[0:3] == "sud":
             await sudoers_list(client=client, message=message, _=_)
@@ -175,7 +175,7 @@ async def start_comm(client, message: Message, _):
             await m.delete()
             await app.send_photo(
                 message.chat.id,
-                photo=thumbnail,
+                photo="https://graph.org/file/8041894fa11e8100a9d19.jpg",
                 caption=searched_text,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=key,
@@ -197,7 +197,7 @@ async def start_comm(client, message: Message, _):
         if config.START_IMG_URL:
             try:
                 await message.reply_photo(
-                    photo=config.START_IMG_URL,
+                    photo="https://graph.org/file/8041894fa11e8100a9d19.jpg",
                     caption=_["start_2"].format(
                         config.MUSIC_BOT_NAME
                     ),
