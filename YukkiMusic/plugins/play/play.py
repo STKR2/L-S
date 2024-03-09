@@ -1,18 +1,20 @@
 #
-# Copyright (C) 2021-present by TeamYukki@Github, < https://github.com/TeamYukki >.
+# Copyright (C) 2023-2024 by YukkiOwner@Github, < https://github.com/YukkiOwner >.
 #
-# This file is part of < https://github.com/TeamYukki/YukkiMusicBot > project,
+# This file is part of < https://github.com/YukkiOwner/YukkiMusicBot > project,
 # and is released under the "GNU v3.0 License Agreement".
-# Please see < https://github.com/TeamYukki/YukkiMusicBot/blob/master/LICENSE >
+# Please see < https://github.com/YukkiOwner/YukkiMusicBot/blob/master/LICENSE >
 #
 # All rights reserved.
 #
 
+
 import random
 import string
 from ast import ExceptHandler
-from strings.filters import command
+
 from pyrogram import filters
+from strings.filters import command
 from pyrogram.types import (InlineKeyboardMarkup, InputMediaPhoto,
                             Message)
 from pytgcalls.exceptions import NoActiveGroupCall
@@ -42,6 +44,7 @@ PLAY_COMMAND = get_command("PLAY_COMMAND")
 
 @app.on_message(
     command(PLAY_COMMAND)
+    & filters.group
     & ~BANNED_USERS
 )
 @PlayWrapper
@@ -118,6 +121,7 @@ async def play_commnd(
                     forceplay=fplay,
                 )
             except Exception as e:
+                print(f"Error: {e}")
                 ex_type = type(e).__name__
                 err = (
                     e
@@ -168,6 +172,7 @@ async def play_commnd(
                     forceplay=fplay,
                 )
             except Exception as e:
+                print(f"Error: {e}")
                 ex_type = type(e).__name__
                 err = (
                     e
@@ -187,7 +192,7 @@ async def play_commnd(
                         message.from_user.id,
                     )
                 except Exception as e:
-                    print(e)
+                    print(f"Error: {e}")
                     return await mystic.edit_text(_["play_3"])
                 streamtype = "playlist"
                 plist_type = "yt"
@@ -201,7 +206,7 @@ async def play_commnd(
                 try:
                     details, track_id = await YouTube.track(url)
                 except Exception as e:
-                    print(e)
+                    print(f"Error: {e}")
                     return await mystic.edit_text(_["play_3"])
                 streamtype = "youtube"
                 img = details["thumb"]
@@ -292,6 +297,7 @@ async def play_commnd(
             try:
                 details, track_id = await Resso.track(url)
             except Exception as e:
+                print(f"Error: {e}")
                 return await mystic.edit_text(_["play_3"])
             streamtype = "youtube"
             img = details["thumb"]
@@ -324,6 +330,7 @@ async def play_commnd(
                     forceplay=fplay,
                 )
             except Exception as e:
+                print(f"Error: {e}")
                 ex_type = type(e).__name__
                 err = (
                     e
@@ -344,6 +351,7 @@ async def play_commnd(
                     "Please turn on Voice Chat.. Bot is not able to stream urls..",
                 )
             except Exception as e:
+                print(f"Error: {e}")
                 return await mystic.edit_text(
                     _["general_3"].format(type(e).__name__)
                 )
@@ -362,6 +370,7 @@ async def play_commnd(
                     forceplay=fplay,
                 )
             except Exception as e:
+                print(f"Error: {e}")
                 ex_type = type(e).__name__
                 err = (
                     e
@@ -429,6 +438,7 @@ async def play_commnd(
                 forceplay=fplay,
             )
         except Exception as e:
+            print(f"Error: {e}")
             ex_type = type(e).__name__
             err = (
                 e
@@ -574,6 +584,7 @@ async def play_music(client, CallbackQuery, _):
             forceplay=ffplay,
         )
     except Exception as e:
+        print(f"Error: {e}")
         ex_type = type(e).__name__
         err = (
             e
@@ -684,6 +695,7 @@ async def play_playlists_command(client, CallbackQuery, _):
             forceplay=ffplay,
         )
     except Exception as e:
+        print(f"Error: {e}")
         ex_type = type(e).__name__
         err = (
             e
