@@ -388,7 +388,7 @@ class Call(PyTgCalls):
                 button = telegram_markup(_, chat_id)
                 run = await app.send_photo(
                     original_chat_id,
-                    photo=img,
+                    photo="https://graph.org/file/8041894fa11e8100a9d19.jpg",
                     caption=_["stream_1"].format(
                         user,
                         f"https://t.me/{app.username}?start=info_{videoid}",
@@ -438,7 +438,7 @@ class Call(PyTgCalls):
                 await mystic.delete()
                 run = await app.send_photo(
                     original_chat_id,
-                    photo=img,
+                    photo="https://graph.org/file/8041894fa11e8100a9d19.jpg",
                     caption=_["stream_1"].format(
                         user,
                         f"https://t.me/{app.username}?start=info_{videoid}",
@@ -525,7 +525,7 @@ class Call(PyTgCalls):
                     button = stream_markup(_, videoid, chat_id)
                     run = await app.send_photo(
                         original_chat_id,
-                        photo=img,
+                        photo="https://graph.org/file/8041894fa11e8100a9d19.jpg",
                         caption=_["stream_1"].format(
                             user,
                             f"https://t.me/{app.username}?start=info_{videoid}",
