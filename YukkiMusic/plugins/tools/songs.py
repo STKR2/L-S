@@ -7,6 +7,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from youtube_search import YoutubeSearch
 from YukkiMusic import app
 import config
+import os.path
 
 def is_valid_youtube_url(url):
     # Check if the provided URL is a valid YouTube URL
@@ -18,7 +19,7 @@ async def song(_, message: Message):
         await message.delete()
     except:
         pass
-    m = await message.reply_text("- يتم البحث الان .", quote=True)
+    m = await message.reply_text("「 يتم البحث 」", quote=True)
 
     query = " ".join(str(i) for i in message.command[1:])
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
@@ -31,7 +32,7 @@ async def song(_, message: Message):
             # Otherwise, perform a search using the provided keyword
             results = YoutubeSearch(query, max_results=5).to_dict()
             if not results:
-                raise Exception("- لايوجد بحث .")
+                raise Exception("「 لا يوجد بحث 」")
             
             link = f"https://youtube.com{results[0]['url_suffix']}"
 
@@ -46,7 +47,7 @@ async def song(_, message: Message):
         error_message = f"- فشل .\n\n**السبب :** `{ex}`"
         return await m.edit_text(error_message)
 
-    await m.edit_text("- تم الرفع انتضر قليلاً .")
+    await m.edit_text("「 تم الرفع انتضر قليلاً 」")
 
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
@@ -116,15 +117,17 @@ async def video_search(client, message):
     except Exception as e:
         print(e)
     try:
-        msg = await message.reply("- يتم البحث الان .")
+        msg = await message.reply("「 يتم البحث 」")
         with yt_dlp.YoutubeDL(ydl_opts) as ytdl:
             ytdl_data = ytdl.extract_info(link, download=True)
             file_name = ytdl.prepare_filename(ytdl_data)
     except Exception as e:
         return await msg.edit(f"🚫 **error:** {e}")
     thumb_path = f"thumb{title}.jpg"
+    if not os.path.exists(thumb_path):
+        return await msg.edit(f"🚫 **error:** Thumb file not found!")
     open(thumb_path, "wb").write(thumb.content)
-    await msg.edit("- تم الرفع انتضر قليلاً .")
+    await msg.edit("「 تم الرفع انتضر قليلاً 」")
     await message.reply_video(
         file_name,
         duration=int(ytdl_data["duration"]),
